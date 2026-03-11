@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - 镜像传输参数生成器</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 24px;
+      color: #333;
+      line-height: 1.7;
+    }
+    h1 { font-size: 1.6em; border-bottom: 2px solid #ddd; padding-bottom: 12px; }
+    h2 { font-size: 1.15em; margin-top: 2em; color: #222; }
+    p { margin: 0.6em 0; }
+    ul { padding-left: 1.5em; }
+    li { margin: 0.3em 0; }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    .updated { color: #666; font-style: italic; margin-top: -8px; margin-bottom: 1.5em; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0.8em 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th { background: #f0f0f0; font-weight: 600; }
+    tr:nth-child(even) td { background: #fafafa; }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy for 镜像传输参数生成器 (Image Transfer Parameter Generator)</h1>
+  <p class="updated">Last updated: March 10, 2026</p>
+
+  <h2>Overview</h2>
+  <p>
+    镜像传输参数生成器 ("the Extension") is a Chrome browser extension designed for internal use.
+    This privacy policy describes how the Extension handles data.
+  </p>
+
+  <h2>Data Collection</h2>
+  <p><strong>The Extension does not collect, transmit, or store any personal data on external servers.</strong></p>
+  <p>All data processing occurs locally within the user's browser.</p>
+
+  <h2>Data Storage</h2>
+  <p>The Extension uses Chrome's <code>storage.local</code> API to persist the following user preferences locally on the user's device:</p>
+  <ul>
+    <li>Namespace input</li>
+    <li>Repository name</li>
+    <li>Image name prefix</li>
+    <li>Selected service list</li>
+    <li>Generated parameter results</li>
+  </ul>
+  <p>This data is stored <strong>only on the user's local device</strong> and is never transmitted to any external server or third party.</p>
+
+  <h2>Host Access</h2>
+  <p>The Extension operates exclusively on <code>https://devops.zatech.com</code>. It injects a content script on this domain solely to:</p>
+  <ul>
+    <li>Read container image information from the service list page</li>
+    <li>Proxy API requests to the platform using the user's existing authenticated session (cookie-based token)</li>
+  </ul>
+  <p>No data extracted from this domain is transmitted outside of the user's local browser environment.</p>
+
+  <h2>Permissions</h2>
+  <table>
+    <thead>
+      <tr><th>Permission</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>activeTab</code></td>
+        <td>Read the current tab's URL to extract cluster and namespace information</td>
+      </tr>
+      <tr>
+        <td><code>storage</code></td>
+        <td>Save and restore user preferences and service list across sessions</td>
+      </tr>
+      <tr>
+        <td><code>tabs</code></td>
+        <td>Enable communication between the popup and the content script</td>
+      </tr>
+      <tr>
+        <td>Host permission (<code>devops.zatech.com</code>)</td>
+        <td>Inject content script and proxy API requests on the target DevOps platform</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Third-party Sharing</h2>
+  <p>The Extension does <strong>not</strong> share any data with third parties.</p>
+
+  <h2>Remote Code</h2>
+  <p>The Extension does <strong>not</strong> use any remote code. All JavaScript is bundled within the extension package.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>If this policy is updated, the updated version will be reflected in this repository with a new "Last updated" date.</p>
+
+  <h2>Contact</h2>
+  <p>If you have any questions about this privacy policy, please contact:
+    <a href="mailto:jun.wang@leadinx.co.jp">jun.wang@leadinx.co.jp</a>
+  </p>
+
+</body>
+</html>
